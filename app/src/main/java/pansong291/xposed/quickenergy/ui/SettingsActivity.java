@@ -24,6 +24,7 @@ public class SettingsActivity extends Activity {
     private static final int MAX_TAB_INDEX = 3;
 
     private TabHost tabHost;
+    private ScrollView scrollView;
     private int currentView = 0;
     private GestureDetector gestureDetector;
     private Animation slideLeftIn;
@@ -42,7 +43,8 @@ public class SettingsActivity extends Activity {
             sw_kitchen, sw_antOcean, sw_userPatrol, sw_animalConsumeProp, sw_antOrchard, sw_receiveOrchardTaskAward,
             sw_enableOnGoing, sw_backupRuntime, sw_collectSesame, sw_zcjSignIn, sw_merchantKmdk, sw_acceptGift,
             sw_enableStall, sw_stallAutoClose, sw_stallAutoOpen, sw_stallAutoTask, sw_stallReceiveAward,
-            sw_stallOpenType;
+            sw_stallOpenType, sw_stallDonate, sw_chickenDiary, sw_collectGiftBox, sw_stallInviteRegister,
+            sw_stallThrowManure, sw_greenFinance, sw_totalCertCount;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -186,6 +188,7 @@ public class SettingsActivity extends Activity {
         sw_useAccelerateTool = findViewById(R.id.sw_useAccelerateTool);
         sw_notifyFriend = findViewById(R.id.sw_notifyFriend);
         sw_acceptGift = findViewById(R.id.sw_acceptGift);
+        sw_chickenDiary = findViewById(R.id.sw_chickenDiary);
         sw_antOrchard = findViewById(R.id.sw_antOrchard);
         sw_receiveOrchardTaskAward = findViewById(R.id.sw_receiveOrchardTaskAward);
         sw_receivePoint = findViewById(R.id.sw_receivePoint);
@@ -207,6 +210,8 @@ public class SettingsActivity extends Activity {
         sw_antOcean = findViewById(R.id.sw_antOcean);
         sw_userPatrol = findViewById(R.id.sw_userPatrol);
         sw_animalConsumeProp = findViewById(R.id.sw_animalConsumeProp);
+        sw_collectGiftBox = findViewById(R.id.sw_collectGiftBox);
+        sw_totalCertCount = findViewById(R.id.sw_totalCertCount);
 
         sw_enableStall = findViewById(R.id.sw_enableStall);
         sw_stallAutoClose = findViewById(R.id.sw_stallAutoClose);
@@ -214,6 +219,10 @@ public class SettingsActivity extends Activity {
         sw_stallAutoTask = findViewById(R.id.sw_stallAutoTask);
         sw_stallReceiveAward = findViewById(R.id.sw_stallReceiveAward);
         sw_stallOpenType = findViewById(R.id.sw_stallOpenType);
+        sw_stallDonate = findViewById(R.id.sw_stallDonate);
+        sw_stallInviteRegister = findViewById(R.id.sw_stallInviteRegister);
+        sw_stallThrowManure = findViewById(R.id.sw_stallThrowManure);
+        sw_greenFinance = findViewById(R.id.sw_greenFinance);
     }
 
     @Override
@@ -252,6 +261,7 @@ public class SettingsActivity extends Activity {
         sw_useAccelerateTool.setChecked(Config.useAccelerateTool());
         sw_notifyFriend.setChecked(Config.notifyFriend());
         sw_acceptGift.setChecked(Config.acceptGift());
+        sw_chickenDiary.setChecked(Config.chickenDiary());
         sw_antOrchard.setChecked(Config.antOrchard());
         sw_receiveOrchardTaskAward.setChecked(Config.receiveOrchardTaskAward());
         sw_receivePoint.setChecked(Config.receivePoint());
@@ -273,6 +283,8 @@ public class SettingsActivity extends Activity {
         sw_antOcean.setChecked(Config.antOcean());
         sw_userPatrol.setChecked(Config.userPatrol());
         sw_animalConsumeProp.setChecked(Config.animalConsumeProp());
+        sw_collectGiftBox.setChecked(Config.collectGiftBox());
+        sw_totalCertCount.setChecked(Config.totalCertCount());
 
         sw_enableStall.setChecked(Config.enableStall());
         sw_stallAutoClose.setChecked(Config.stallAutoClose());
@@ -280,6 +292,10 @@ public class SettingsActivity extends Activity {
         sw_stallAutoTask.setChecked(Config.stallAutoTask());
         sw_stallReceiveAward.setChecked(Config.stallReceiveAward());
         sw_stallOpenType.setChecked(Config.stallOpenType());
+        sw_stallDonate.setChecked(Config.stallDonate());
+        sw_stallInviteRegister.setChecked(Config.stallInviteRegister());
+        sw_stallThrowManure.setChecked(Config.stallThrowManure());
+        sw_greenFinance.setChecked(Config.greenFinance());
     }
 
     @SuppressLint("NonConstantResourceId")
@@ -431,6 +447,10 @@ public class SettingsActivity extends Activity {
                     Config.setAcceptGift(sw.isChecked());
                     break;
 
+                case R.id.sw_chickenDiary:
+                    Config.setChickenDiary(sw.isChecked());
+                    break;
+
                 case R.id.sw_antOrchard:
                     Config.setAntOrchard(sw.isChecked());
                     break;
@@ -503,6 +523,14 @@ public class SettingsActivity extends Activity {
                     Config.setAnimalConsumeProp(sw.isChecked());
                     break;
 
+                case R.id.sw_collectGiftBox:
+                    Config.setCollectGiftBox(sw.isChecked());
+                    break;
+
+                case R.id.sw_totalCertCount:
+                    Config.setTotalCertCount(sw.isChecked());
+                    break;
+
                 case R.id.sw_enableStall:
                     Config.setEnableStall(sw.isChecked());
                     break;
@@ -525,6 +553,22 @@ public class SettingsActivity extends Activity {
 
                 case R.id.sw_stallOpenType:
                     Config.setStallOpenType(sw.isChecked());
+                    break;
+
+                case R.id.sw_stallDonate:
+                    Config.setStallDonate(sw.isChecked());
+                    break;
+
+                case R.id.sw_stallInviteRegister:
+                    Config.setStallInviteRegister(sw.isChecked());
+                    break;
+
+                case R.id.sw_stallThrowManure:
+                    Config.setStallThrowManure(sw.isChecked());
+                    break;
+
+                case R.id.sw_greenFinance:
+                    Config.setGreenFinance(sw.isChecked());
                     break;
             }
         } else if (v instanceof Button) {
@@ -665,19 +709,6 @@ public class SettingsActivity extends Activity {
                     EditDialog.showEditDialog(this, btn.getText(), EditDialog.EditMode.ANIMAL_SLEEP_TIME);
                     break;
 
-                case R.id.btn_donation_developer:
-                    new AlertDialog.Builder(this)
-                            .setView(R.layout.donation_view)
-                            .setPositiveButton("关闭", null)
-                            .create().show();
-                    break;
-
-                case R.id.btn_donation_xqe_developer:
-                    Intent it2 = new Intent(Intent.ACTION_VIEW, Uri.parse(
-                            "alipays://platformapi/startapp?saId=10000007&qrcode=https%3A%2F%2Fqr.alipay.com%2Ftsx00339eflkuhhtfctcn48"));
-                    startActivity(it2);
-                    break;
-
                 case R.id.btn_minExchangeCount:
                     EditDialog.showEditDialog(this, btn.getText(), EditDialog.EditMode.MIN_EXCHANGE_COUNT);
                     break;
@@ -700,6 +731,11 @@ public class SettingsActivity extends Activity {
                             ListDialog.ListType.RADIO);
                     break;
 
+                case R.id.btn_sendFriendCard:
+                    ListDialog.show(this, btn.getText(), AlipayUser.getList(), Config.sendFriendCard(), null,
+                            ListDialog.ListType.RADIO);
+                    break;
+
                 case R.id.btn_orchardSpreadManureCount:
                     EditDialog.showEditDialog(this, btn.getText(),
                             EditDialog.EditMode.ORCHARD_SPREAD_MANURE_COUNT);
@@ -709,12 +745,24 @@ public class SettingsActivity extends Activity {
                     ListDialog.show(this, btn.getText(), AlipayUser.getList(), Config.stallOpenList(), null);
                     break;
 
+                case R.id.btn_stallWhiteList:
+                    ListDialog.show(this, btn.getText(), AlipayUser.getList(), Config.stallWhiteList(), null);
+                    break;
+
+                case R.id.btn_stallBlackList:
+                    ListDialog.show(this, btn.getText(), AlipayUser.getList(), Config.stallBlackList(), null);
+                    break;
+
                 case R.id.btn_stallAllowOpenTime:
                     EditDialog.showEditDialog(this, btn.getText(), EditDialog.EditMode.STALL_ALLOW_OPEN_TIME);
                     break;
 
                 case R.id.btn_stallSelfOpenTime:
                     EditDialog.showEditDialog(this, btn.getText(), EditDialog.EditMode.STALL_SELF_OPEN_TIME);
+                    break;
+
+                case R.id.btn_stallInviteShopList:
+                    ListDialog.show(this, btn.getText(), AlipayUser.getList(), Config.stallInviteShopList(), null);
                     break;
             }
         }

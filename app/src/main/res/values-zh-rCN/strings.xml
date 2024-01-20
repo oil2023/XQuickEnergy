@@ -135,9 +135,18 @@
     <string name="visit_friend_list">送麦子名单</string>
     <string name="stall_open_type">摊位类型(打开:摆摊列表/关闭:不摆列表)</string>
     <string name="stall_open_list">摊位列表</string>
-    <string name="stall_white_list">不请走列表(未实装)</string>
-    <string name="stall_allow_open_time">允许他人摆摊时长(未实装)</string>
+    <string name="stall_white_list">不请走列表</string>
+    <string name="stall_allow_open_time">允许他人摆摊时长</string>
     <string name="stall_self_open_time">自己收摊时长</string>
-    <string name="stall_black_list">禁摆摊列表(未实装)</string>
+    <string name="stall_black_list">禁摆摊列表</string>
+    <string name="chicken_diary">小鸡日记</string>
+    <string name="stall_donate">新村自动捐赠</string>
+    <string name="collect_gift_box">领取礼盒</string>
+    <string name="stall_invite_register">邀请好友开通新村</string>
+    <string name="stall_invite_shop_list">新村邀请摆摊列表</string>
+    <string name="stall_throw_manure">新村丢肥料</string>
+    <string name="green_finance">开启绿色经营</string>
+    <string name="total_cert_count">记录证书总数</string>
+    <string name="send_friend_card">送好友卡片(赠送当前图鉴所有卡片)</string>
 
 </resources>

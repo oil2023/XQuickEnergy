@@ -605,6 +605,20 @@
 						android:minHeight="50dp"
 						android:id="@+id/sw_antdodoCollect" />
 
+					<Button
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						style="?android:attr/buttonBarButtonStyle"
+						android:text="@string/send_friend_card"
+						android:textAllCaps="false"
+						android:onClick="onClick"
+						android:minHeight="50dp"
+						android:gravity="start|center_vertical"
+						android:background="@drawable/button"
+						android:id="@+id/btn_sendFriendCard"
+						android:paddingStart="@dimen/setting_item_padding"
+						android:paddingEnd="@dimen/setting_item_padding" />
+
 					<Switch
 						android:paddingStart="@dimen/setting_item_padding"
 						android:paddingEnd="@dimen/setting_item_padding"
@@ -658,6 +672,26 @@
 						android:onClick="onClick"
 						android:minHeight="50dp"
 						android:id="@+id/sw_animalConsumeProp" />
+
+					<Switch
+						android:paddingStart="@dimen/setting_item_padding"
+						android:paddingEnd="@dimen/setting_item_padding"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:text="@string/collect_gift_box"
+						android:onClick="onClick"
+						android:minHeight="50dp"
+						android:id="@+id/sw_collectGiftBox" />
+
+					<Switch
+						android:paddingStart="@dimen/setting_item_padding"
+						android:paddingEnd="@dimen/setting_item_padding"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:text="@string/total_cert_count"
+						android:onClick="onClick"
+						android:minHeight="50dp"
+						android:id="@+id/sw_totalCertCount" />
 				</LinearLayout>
 				<!--庄园设置-->
 				<LinearLayout
@@ -934,6 +968,16 @@
 						android:paddingEnd="@dimen/setting_item_padding"
 						android:layout_width="match_parent"
 						android:layout_height="wrap_content"
+						android:text="@string/chicken_diary"
+						android:onClick="onClick"
+						android:minHeight="50dp"
+						android:id="@+id/sw_chickenDiary" />
+
+					<Switch
+						android:paddingStart="@dimen/setting_item_padding"
+						android:paddingEnd="@dimen/setting_item_padding"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
 						android:text="@string/ant_orchard"
 						android:onClick="onClick"
 						android:minHeight="50dp"
@@ -1090,6 +1134,50 @@
 						android:gravity="start|center_vertical"
 						android:background="@drawable/button"
 						android:id="@+id/btn_stallSelfOpenTime"
+						android:paddingStart="@dimen/setting_item_padding"
+						android:paddingEnd="@dimen/setting_item_padding" />
+
+					<Switch
+						android:paddingStart="@dimen/setting_item_padding"
+						android:paddingEnd="@dimen/setting_item_padding"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:text="@string/stall_donate"
+						android:onClick="onClick"
+						android:minHeight="50dp"
+						android:id="@+id/sw_stallDonate" />
+
+					<Switch
+						android:paddingStart="@dimen/setting_item_padding"
+						android:paddingEnd="@dimen/setting_item_padding"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:text="@string/stall_invite_register"
+						android:onClick="onClick"
+						android:minHeight="50dp"
+						android:id="@+id/sw_stallInviteRegister" />
+
+					<Switch
+						android:paddingStart="@dimen/setting_item_padding"
+						android:paddingEnd="@dimen/setting_item_padding"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:text="@string/stall_throw_manure"
+						android:onClick="onClick"
+						android:minHeight="50dp"
+						android:id="@+id/sw_stallThrowManure" />
+
+					<Button
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						style="?android:attr/buttonBarButtonStyle"
+						android:text="@string/stall_invite_shop_list"
+						android:textAllCaps="false"
+						android:onClick="onClick"
+						android:minHeight="50dp"
+						android:gravity="start|center_vertical"
+						android:background="@drawable/button"
+						android:id="@+id/btn_stallInviteShopList"
 						android:paddingStart="@dimen/setting_item_padding"
 						android:paddingEnd="@dimen/setting_item_padding" />
 
@@ -1254,33 +1342,15 @@
 						android:minHeight="50dp"
 						android:id="@+id/sw_merchantKmdk" />
 
-					<Button
+					<Switch
+						android:paddingStart="@dimen/setting_item_padding"
+						android:paddingEnd="@dimen/setting_item_padding"
 						android:layout_width="match_parent"
 						android:layout_height="wrap_content"
-						style="?android:attr/buttonBarButtonStyle"
-						android:text="@string/support_xqe_developer"
-						android:textAllCaps="false"
+						android:text="@string/green_finance"
 						android:onClick="onClick"
 						android:minHeight="50dp"
-						android:gravity="start|center_vertical"
-						android:background="@drawable/button"
-						android:id="@+id/btn_donation_xqe_developer"
-						android:paddingStart="@dimen/setting_item_padding"
-						android:paddingEnd="@dimen/setting_item_padding" />
-
-					<Button
-						android:layout_width="match_parent"
-						android:layout_height="wrap_content"
-						style="?android:attr/buttonBarButtonStyle"
-						android:text="@string/support_developer"
-						android:textAllCaps="false"
-						android:onClick="onClick"
-						android:minHeight="50dp"
-						android:gravity="start|center_vertical"
-						android:background="@drawable/button"
-						android:id="@+id/btn_donation_developer"
-						android:paddingStart="@dimen/setting_item_padding"
-						android:paddingEnd="@dimen/setting_item_padding" />
+						android:id="@+id/sw_greenFinance" />
 
 				</LinearLayout>
 
